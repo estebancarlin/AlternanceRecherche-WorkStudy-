@@ -1,0 +1,47 @@
+config_metadata: 'Saving time : 10/15/2023, 14:06:50'
+purpose: 'default config'
+
+# metrics options
+metrics:
+  accuracy: true
+  iou: true
+  iou_avg: true
+  iou_weighted: true
+  crossentropy: true
+  crossentropy_weighted: true
+
+# model options
+model:
+  hidden_channels: 16
+  learning_rate: 0.0001
+  dropout: 0.5
+  loss: 'crossentropy weight'
+  optimizer: 'adam'
+  model_summary: false
+  depth_unet: 4
+
+# data options
+data:
+  data_path: 'data'
+  train_split: 0.8
+  val_split: 0.1
+  shuffle: true
+  number_of_channels: 1
+  number_classes: 4
+
+# train options
+train:
+  batch_size: 1
+  virtual_batch_size: 10
+  epochs: 16
+  save_learning_curves: true
+  logs_path: 'logs'
+
+# val options
+val:
+  batch_size: 1
+
+# test options
+test:
+  batch_size: 1
+  checkpoint: 'best'
