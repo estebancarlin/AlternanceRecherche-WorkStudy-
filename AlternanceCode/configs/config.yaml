@@ -1,0 +1,46 @@
+purpose: "default config"
+
+# Metrics to compute during evaluation
+metrics:
+  accuracy: true
+  iou: true
+  iou_avg: true
+  iou_weighted: true
+  crossentropy: true
+  crossentropy_weighted: true
+
+# Model configuration
+model:
+  hidden_channels: 16          # Number of hidden channels
+  learning_rate: 0.0001        # Learning rate
+  dropout: 0.5                 # Dropout rate
+  loss: "crossentropy weight"  # Loss function
+  optimizer: "adam"            # Optimizer type
+  model_summary: false         # Whether to print model.summary
+  depth_unet: 4                # Depth of the U-Net architecture
+
+# Data loading and preprocessing
+data:
+  data_path: "data"            # Path to dataset
+  train_split: 0.8             # Proportion of training data
+  val_split: 0.1               # Proportion of validation data
+  shuffle: true                # Shuffle the dataset
+  number_of_channels: 1        # Grayscale images (e.g., MRI)
+  number_classes: 4            # Number of segmentation classes
+
+# Training settings
+train:
+  batch_size: 1                # Training batch size
+  virtual_batch_size: 10       # Accumulated gradient batch size
+  epochs: 16                   # Number of training epochs
+  save_learning_curves: true   # Save training/validation curves
+  logs_path: "logs"            # Path to save logs
+
+# Validation settings
+val:
+  batch_size: 1                # Validation batch size
+
+# Test settings
+test:
+  batch_size: 1                # Test batch size
+  checkpoint: "best"           # Which checkpoint to use for testing
