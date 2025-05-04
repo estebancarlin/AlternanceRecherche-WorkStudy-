@@ -63,8 +63,8 @@ These features will serve as input to a classification model (e.g., **VGG-Net**)
 
 > Visual comparisons between predictions and ground truth show high-quality segmentations across different patients and heart conditions.
 
-![Data format overview](./images/data_format.png)
-![Data format overview (1)](./images/data_format_bis.png)
+![Data format overview](./data_format.png)
+![Data format overview (1)](./data_format_bis.png)
 
 ---
 
